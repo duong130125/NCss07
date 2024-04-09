@@ -1,14 +1,8 @@
-interface Student {
-    id: number;
-    name: string;
-    class: string;
-}
-
-function filterStudentsByClass(students: Student[], className: string): Student[] {
+function filterStudentsByClass(students: { id: number; name: string; class: string; }[], className: string): { id: number; name: string; class: string; }[] {
     return students.filter(student => student.class === className);
 }
 
-let students: Student[] = [
+let students = [
     { id: 1, name: "Alice", class: "A" },
     { id: 2, name: "Bob", class: "B" },
     { id: 3, name: "Charlie", class: "A" },
